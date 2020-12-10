@@ -1,43 +1,44 @@
 package guru.springframework.msscbeerservice.domain;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UpdateTimestamp;
+//import org.hibernate.annotations.CreationTimestamp;
+//import org.hibernate.annotations.GenericGenerator;
+//import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
+//@Entity
 public class Beer {
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name="UUID" ,strategy="org.hibernate.id.UUIDGenerator")
-    @Column(length=36, columnDefinition = "varchar", updatable = false, nullable = false)
+//    @Id
+//    @GeneratedValue(generator = "UUID")
+//    @GenericGenerator(name="UUID" ,strategy="org.hibernate.id.UUIDGenerator")
+//    @Column(length=36, columnDefinition = "varchar", updatable = false, nullable = false)
     private UUID id;
 
-    @Version
+//    @Version
     private Long version;
 
-    @CreationTimestamp
-    @Column(updatable = false)
+//    @CreationTimestamp
+//    @Column(updatable = false)
     private Timestamp createdDate;
 
-    @UpdateTimestamp
+//    @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
     private String beerName;
     private String beerStyle;
 
-    @Column(unique = true)
+//    @Column(unique = true)
     private Long upc;
 
     private BigDecimal price;
